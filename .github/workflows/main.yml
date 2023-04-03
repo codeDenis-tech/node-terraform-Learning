@@ -49,6 +49,7 @@ jobs:
           task-definition: ${{ env.ECS_TD }}
           container-name: ${{ env.CONTAINER_NAME }}
           image: ${{ steps.build-image.outputs.image }}
+          working-directory: ./app
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
