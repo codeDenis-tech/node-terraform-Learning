@@ -23,11 +23,6 @@ jobs:
       - name: Install packages 📀
         run: npm ci
         working-directory: ./app
-
-      - name: Compile project 🛠
-        run: npm run compile
-        working-directory: ./app
-      
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
