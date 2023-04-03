@@ -18,11 +18,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install packages
+        with:
+          node-version: "14"
+      - name: Install packages 📀
         run: npm ci
-      - name: Compile project
-        run: npm run compile
+        working-directory: ./app
 
+      - name: Compile project 🛠
+        run: npm run compile
+        working-directory: ./app
+      
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
